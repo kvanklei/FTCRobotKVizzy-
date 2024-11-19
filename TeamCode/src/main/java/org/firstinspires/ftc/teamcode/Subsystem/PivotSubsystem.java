@@ -1,8 +1,10 @@
 package org.firstinspires.ftc.teamcode.Subsystem;
 
+import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorEx;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.HardwareMap;
+import com.qualcomm.robotcore.hardware.PIDFCoefficients;
 
 import org.firstinspires.ftc.teamcode.Constants;
 
@@ -59,5 +61,9 @@ public class PivotSubsystem {
     public int target_pos() {
         return pivot1.getTargetPosition();
     }
+
+
+  //  PIDFCoefficients pidf_vals = new PIDFCoefficients(Constants.pivot_p, Constants.pivot_i, Constants.pivot_d);
+  //   pivot.setPIDFCoefficients(DcMotor.RunMode.RUN_TO_POSITION, pidf_vals);
 }
 

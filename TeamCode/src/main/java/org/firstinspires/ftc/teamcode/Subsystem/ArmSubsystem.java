@@ -4,6 +4,7 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorEx;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.HardwareMap;
+import com.qualcomm.robotcore.hardware.PIDFCoefficients;
 
 import org.firstinspires.ftc.teamcode.Constants;
 
@@ -43,5 +44,11 @@ public class ArmSubsystem {
     public int target_pos() {
         return arm.getTargetPosition();
     }
+
+
+
+    //PIDFCoefficients pidf_vals = new PIDFCoefficients(Constants.arm_p, Constants.arm_i, Constants.arm_d);
+    //arm.setPIDFCoefficients(DcMotor.RunMode.RUN_TO_POSITION, pidf_vals);
+
 
 }

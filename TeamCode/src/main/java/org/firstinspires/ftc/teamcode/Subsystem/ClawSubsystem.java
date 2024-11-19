@@ -29,10 +29,10 @@ public class ClawSubsystem {
         roller.setPosition(Constants.roller_p2);
     }
 
-    }public int
+    }
 
 
-}
+
 
 
 
