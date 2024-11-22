@@ -18,9 +18,14 @@ public class PivotSubsystem {
 
         pivot1.setDirection(DcMotorSimple.Direction.FORWARD);
         pivot2.setDirection(DcMotorSimple.Direction.REVERSE);
+
+        update_pidf(Constants.pivot_p, Constants.pivot_i, Constants.pivot_d, Constants.pivot_f1);
+
     }
 
     public void p1(){
+        update_pidf(Constants.pivot_p, Constants.pivot_i, Constants.pivot_d, Constants.pivot_f1);
+
         pivot1.setTargetPosition(Constants.pivot1_p1);
         pivot1.setMode(DcMotorEx.RunMode.RUN_TO_POSITION);
         pivot1.setPower(0.5);
@@ -30,6 +35,8 @@ public class PivotSubsystem {
         pivot2.setPower(0.5);
 
     } public void p2(){
+        update_pidf(Constants.pivot_p, Constants.pivot_i, Constants.pivot_d, Constants.pivot_f1);
+
         pivot1.setTargetPosition(Constants.pivot1_p2);
         pivot1.setMode(DcMotorEx.RunMode.RUN_TO_POSITION);
         pivot1.setPower(0.5);
@@ -39,6 +46,8 @@ public class PivotSubsystem {
         pivot2.setPower(0.5);
 
     } public void p3(){
+        update_pidf(Constants.pivot_p, Constants.pivot_i, Constants.pivot_d, Constants.pivot_f1);
+
         pivot1.setTargetPosition(Constants.pivot1_p3);
         pivot1.setMode(DcMotorEx.RunMode.RUN_TO_POSITION);
         pivot1.setPower(0.5);
@@ -63,7 +72,12 @@ public class PivotSubsystem {
     }
 
 
-  //  PIDFCoefficients pidf_vals = new PIDFCoefficients(Constants.pivot_p, Constants.pivot_i, Constants.pivot_d);
-  //   pivot.setPIDFCoefficients(DcMotor.RunMode.RUN_TO_POSITION, pidf_vals);
+    public void update_pidf(double p, double i, double d, double f) {
+        PIDFCoefficients pidf_vals = new PIDFCoefficients(p, i, d, f);
+        pivot1.setPIDFCoefficients(DcMotor.RunMode.RUN_TO_POSITION, pidf_vals);
+        pivot2.setPIDFCoefficients(DcMotor.RunMode.RUN_TO_POSITION, pidf_vals);
+    }
+
+
 }
 

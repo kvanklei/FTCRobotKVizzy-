@@ -82,6 +82,7 @@ public class TeleOp extends LinearOpMode {
             telemetry.addData("Pivot 1 Current Position", pivot.p1_current_pos());
             telemetry.addData("Pivot 2 Current Position", pivot.p2_current_pos());
             telemetry.addData("Pivot Target Position", pivot.target_pos());
+            telemetry.addData("Servo Current Position", claw.current_pos());
             telemetry.update();
         }
     }
