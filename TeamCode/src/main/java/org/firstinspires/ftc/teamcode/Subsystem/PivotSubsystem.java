@@ -19,6 +19,10 @@ public class PivotSubsystem {
         pivot1.setDirection(DcMotorSimple.Direction.FORWARD);
         pivot2.setDirection(DcMotorSimple.Direction.REVERSE);
 
+        pivot1.setMode(DcMotorEx.RunMode.STOP_AND_RESET_ENCODER);
+        pivot2.setMode(DcMotorEx.RunMode.STOP_AND_RESET_ENCODER);
+
+
         update_pidf(Constants.pivot_p, Constants.pivot_i, Constants.pivot_d, Constants.pivot_f1);
 
     }
@@ -28,33 +32,33 @@ public class PivotSubsystem {
 
         pivot1.setTargetPosition(Constants.pivot1_p1);
         pivot1.setMode(DcMotorEx.RunMode.RUN_TO_POSITION);
-        pivot1.setPower(0.5);
+        pivot1.setPower(0.75);
 
         pivot2.setTargetPosition(Constants.pivot2_p1);
         pivot2.setMode(DcMotorEx.RunMode.RUN_TO_POSITION);
-        pivot2.setPower(0.5);
+        pivot2.setPower(0.75);
 
     } public void p2(){
         update_pidf(Constants.pivot_p, Constants.pivot_i, Constants.pivot_d, Constants.pivot_f1);
 
         pivot1.setTargetPosition(Constants.pivot1_p2);
         pivot1.setMode(DcMotorEx.RunMode.RUN_TO_POSITION);
-        pivot1.setPower(0.5);
+        pivot1.setPower(0.75);
 
         pivot2.setTargetPosition(Constants.pivot2_p2);
         pivot2.setMode(DcMotorEx.RunMode.RUN_TO_POSITION);
-        pivot2.setPower(0.5);
+        pivot2.setPower(0.75);
 
     } public void p3(){
         update_pidf(Constants.pivot_p, Constants.pivot_i, Constants.pivot_d, Constants.pivot_f1);
 
         pivot1.setTargetPosition(Constants.pivot1_p3);
         pivot1.setMode(DcMotorEx.RunMode.RUN_TO_POSITION);
-        pivot1.setPower(0.5);
+        pivot1.setPower(0.75);
 
         pivot2.setTargetPosition(Constants.pivot2_p3);
         pivot2.setMode(DcMotorEx.RunMode.RUN_TO_POSITION);
-        pivot2.setPower(0.5);
+        pivot2.setPower(0.75);
     }
     public void stop() {
         pivot1.setPower(0);
