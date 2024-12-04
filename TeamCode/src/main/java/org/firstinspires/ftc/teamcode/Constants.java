@@ -12,7 +12,7 @@ public class Constants {
     //arm constants
     public static final int arm_p1 = 0;
     public static final int arm_p2 = 1500;
-    public static final int arm_p3 = 2600;
+    public static final int arm_p3 = 3000;
 
 
     //pivot PIDF
@@ -31,16 +31,16 @@ public class Constants {
     public static final int pivot1_p3 = 110;
     public static final int pivot2_p3 = 110;
 
-
-    // joint constants
-    public static final int rest = 0;
-    public static final int intake = 90;
-    public static final int drop = 180;
+//
+  //   joint constants
+  //  public static final int rest = 0;
+  //  public static final int intake = 90;
+  //  public static final int drop = 180;
 
     //roller constants
 
-    public static final int roller_p1 = 0;
-    public static final int roller_p2 = 180;
+    public static final int roller_intake = 0;
+    public static final int roller_output = 180;
 
 
     //drive constants

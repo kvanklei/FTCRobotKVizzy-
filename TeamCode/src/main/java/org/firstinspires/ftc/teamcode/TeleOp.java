@@ -60,21 +60,15 @@ public class TeleOp extends LinearOpMode {
             // claw stuff
 
             // resting position for joint
-            if (gamepad2.left_bumper) {
-                claw.rest();
-            }
-            else if (gamepad2.right_bumper) {
-                claw.intake();
-            }
-            else if (gamepad2.x){
-                 claw.drop();
             }
             if (gamepad2.right_stick_x > 0.2) {
-                claw.p1();
+               claw.p1();
             }
             else if (gamepad2.right_stick_x < -0.2){
                 claw.p2();
             }
+
+
 
             //telemetry data
             telemetry.addData("Arm Current Position", arm.current_pos());
@@ -82,9 +76,8 @@ public class TeleOp extends LinearOpMode {
             telemetry.addData("Pivot 1 Current Position", pivot.p1_current_pos());
             telemetry.addData("Pivot 2 Current Position", pivot.p2_current_pos());
             telemetry.addData("Pivot Target Position", pivot.target_pos());
-            telemetry.addData("Servo Current Position", claw.current_pos());
             telemetry.update();
         }
     }
-}
+
 

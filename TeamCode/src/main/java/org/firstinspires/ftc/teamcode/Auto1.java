@@ -26,7 +26,6 @@ public class Auto1 extends LinearOpMode {
         while (opModeIsActive() && (drive_train.bl_busy() || drive_train.br_busy())) {
 
         }
-
         //rotates 90 degrees clockwise
         drive_train.rotate_degrees(90);
 
@@ -43,8 +42,8 @@ public class Auto1 extends LinearOpMode {
     }
 
 
-
     }
+
 
 
 
