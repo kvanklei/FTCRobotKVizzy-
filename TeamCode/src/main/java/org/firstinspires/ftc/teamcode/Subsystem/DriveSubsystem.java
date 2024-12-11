@@ -25,13 +25,13 @@ public class DriveSubsystem {
             bl.setDirection(DcMotorSimple.Direction.FORWARD);
             br.setDirection(DcMotorSimple.Direction.REVERSE);
 
-            //imu parameters
-            imu_param = new IMU.Parameters(
-                    new RevHubOrientationOnRobot(
-                            RevHubOrientationOnRobot.LogoFacingDirection.RIGHT,
-                            RevHubOrientationOnRobot.UsbFacingDirection.FORWARD
-                    )
-            );
+           ////imu parameters
+           //imu_param = new IMU.Parameters(
+           //        new RevHubOrientationOnRobot(
+           //                RevHubOrientationOnRobot.LogoFacingDirection.RIGHT,
+           //                RevHubOrientationOnRobot.UsbFacingDirection.FORWARD
+           //        )
+           //);
             //initializing imu
            // imu.initialize(imu_param);
         }
@@ -61,21 +61,21 @@ public class DriveSubsystem {
         bl.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
     }
 
-    public double get_Yaw() {
-        robot_orientation = imu.getRobotYawPitchRollAngles();
-        return robot_orientation.getYaw(AngleUnit.DEGREES);
-    }
+  // public double get_Yaw() {
+  //     robot_orientation = imu.getRobotYawPitchRollAngles();
+  //     return robot_orientation.getYaw(AngleUnit.DEGREES);
+  // }
 
     //goes from -180 to 180
-    public void rotate_degrees(double target) {
-        while (this.get_Yaw() != target) {
-            double distance = target - this.get_Yaw();
+  //public void rotate_degrees(double target) {
+  //    while (this.get_Yaw() != target) {
+  //        double distance = target - this.get_Yaw();
 
-            //sets motor speeds
-           br.setPower(MathUtils.clamp(distance * Constants.rot_kP, -1, 1));
-            bl.setPower(MathUtils.clamp(-distance * Constants.rot_kP, -1, 1));
-        }
-    }
+  //        //sets motor speeds
+  //       br.setPower(MathUtils.clamp(distance * Constants.rot_kP, -1, 1));
+  //        bl.setPower(MathUtils.clamp(-distance * Constants.rot_kP, -1, 1));
+  //    }
+  //
 
     //checks if motors are busy
     public boolean bl_busy() {

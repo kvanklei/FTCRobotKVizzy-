@@ -21,28 +21,17 @@ public class Auto1 extends LinearOpMode {
         waitForStart();
 
         //move robot forward 1000 ticks
-        drive_train.move_ticks(1000, 1);
+        drive_train.move_ticks(1500, .45);
 
         while (opModeIsActive() && (drive_train.bl_busy() || drive_train.br_busy())) {
 
         }
-        //rotates 90 degrees clockwise
-        drive_train.rotate_degrees(90);
 
-        while (opModeIsActive() && (drive_train.bl_busy() || drive_train.br_busy())) {
-        }
 
-        //drives forward 500 ticks
-        drive_train.move_ticks(500, 1);
-
-        while (opModeIsActive() && (drive_train.bl_busy() || drive_train.br_busy())) {
-        }
-
-        drive_train.rotate_degrees(0);
     }
 
 
-    }
+}
 
 
 

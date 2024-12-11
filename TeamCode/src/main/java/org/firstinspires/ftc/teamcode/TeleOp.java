@@ -23,8 +23,8 @@ public class TeleOp extends LinearOpMode {
 
         waitForStart();
         while (opModeIsActive()) {
-            double left_y = gamepad1.left_stick_y;
-            double right_x = gamepad1.right_stick_x;
+            double left_y = -gamepad1.left_stick_y;
+            double right_x = -gamepad1.right_stick_x;
 
             //drivetrain drive in arcade
             dt.arcade_drive(left_y, right_x);
@@ -44,30 +44,25 @@ public class TeleOp extends LinearOpMode {
 
             //pivot stuff
 
-            if (gamepad2.dpad_down){
+            if (gamepad2.dpad_down) {
                 pivot.p1();
-            }
-            else if (gamepad2.dpad_right) {
+            } else if (gamepad2.dpad_right) {
                 pivot.p2();
-            }
-            else if (gamepad2.dpad_up) {
+            } else if (gamepad2.dpad_up) {
                 pivot.p3();
-            }
-            else {
+            } else {
                 pivot.stop();
             }
 
             // claw stuff
 
-            // resting position for joint
-            }
-            if (gamepad2.right_stick_x > 0.2) {
-               claw.p1();
-            }
-            else if (gamepad2.right_stick_x < -0.2){
+            if (gamepad1.a) {
+                claw.p1();
+            } else if (gamepad1.b) {
                 claw.p2();
+            } else {
+                claw.stop();
             }
-
 
 
             //telemetry data
@@ -79,5 +74,7 @@ public class TeleOp extends LinearOpMode {
             telemetry.update();
         }
     }
+
+}
 
 

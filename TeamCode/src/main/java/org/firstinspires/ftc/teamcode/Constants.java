@@ -39,8 +39,10 @@ public class Constants {
 
     //roller constants
 
-    public static final int roller_intake = 0;
-    public static final int roller_output = 180;
+    public static final double roller_intake = 0.75;
+    public static final double roller_output = 0.25;
+    public static final double roller_stop = 0.5;
+
 
 
     //drive constants
